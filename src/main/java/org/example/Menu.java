@@ -5,13 +5,11 @@ import java.util.List;
 
 public class Menu implements MenuInterface {
     private String name;
-    private MakeInterface makeInterface;
     private List<Menu> menuList = new ArrayList<>();
     private int count = 1;
 
-    public Menu(String name, MakeInterface makeInterface) {
+    public Menu(String name) {
         this.name = name;
-        this.makeInterface = makeInterface;
     }
 
 
@@ -26,6 +24,7 @@ public class Menu implements MenuInterface {
 
     }
 
+
     public void print() {
         for (Menu subMenu : menuList) {
             System.out.println(count + "- " + subMenu.name);
@@ -37,7 +36,7 @@ public class Menu implements MenuInterface {
 
 
     @Override
-    public void make() {
+    public void make(MakeInterface makeInterface) {
         makeInterface.doIt();
     }
 

@@ -29,62 +29,60 @@ public class TaxOffice {
         }
         do {
 
-            MethodZero methodZero = new MethodZero();
-            Menu menu = new Menu("База данных налоговой инспекции", methodZero);
+            Menu menu = new Menu("База данных налоговой инспекции");
 
 
             Method methodSubMenu1 = new Method();
-            Menu subMenu1 = new Menu("Добавить нового налогоплательщика в базу", methodSubMenu1);
+            Menu subMenu1 = new Menu("Добавить нового налогоплательщика в базу");
             menu.addSabMenu(subMenu1);
 
 
-            MethodZero methodZero1 = new MethodZero();
-            Menu menu2 = new Menu("Корректировать информацию о налогоплательщике и его штрафах", methodZero1);
+            Menu menu2 = new Menu("Корректировать информацию о налогоплательщике и его штрафах");
             menu.addSabMenu(menu2);
 
             MethodMenu2Submenu1 methodMenu2Submenu1 = new MethodMenu2Submenu1();
-            Menu menu2Submenu1 = new Menu("Изменить имя", methodMenu2Submenu1);
+            Menu menu2Submenu1 = new Menu("Изменить имя");
             menu2.addSabMenu(menu2Submenu1);
 
             MethodMenu2Submenu2 methodMenu2Submenu2 = new MethodMenu2Submenu2();
-            Menu menu2Submenu2 = new Menu("Изменить фамилию", methodMenu2Submenu2);
+            Menu menu2Submenu2 = new Menu("Изменить фамилию");
             menu2.addSabMenu(menu2Submenu2);
 
             MethodMenu2Submenu3 methodMenu2Submenu3 = new MethodMenu2Submenu3();
-            Menu menu2Submenu3 = new Menu("Изменить ИНН", methodMenu2Submenu3);
+            Menu menu2Submenu3 = new Menu("Изменить ИНН");
             menu2.addSabMenu(menu2Submenu3);
 
             MethodMenu2Submenu4 methodMenu2Submenu4 = new MethodMenu2Submenu4();
-            Menu menu2Submenu4 = new Menu("Изменить город проживания", methodMenu2Submenu4);
+            Menu menu2Submenu4 = new Menu("Изменить город проживания");
             menu2.addSabMenu(menu2Submenu4);
 
             MethodMenu2Submenu5 methodMenu2Submenu5 = new MethodMenu2Submenu5();
-            Menu menu2Submenu5 = new Menu("Изменить информацию о штрафах", methodMenu2Submenu5);
+            Menu menu2Submenu5 = new Menu("Изменить информацию о штрафах");
             menu2.addSabMenu(menu2Submenu5);
 
 
             MethodSubMenu3 methodSubMenu3 = new MethodSubMenu3();
-            Menu subMenu3 = new Menu("Добавить штраф", methodSubMenu3);
+            Menu subMenu3 = new Menu("Добавить штраф");
             menu.addSabMenu(subMenu3);
 
             MethodSubMenu4 methodSubMenu4 = new MethodSubMenu4();
-            Menu subMenu4 = new Menu("Удалить штраф", methodSubMenu4);
+            Menu subMenu4 = new Menu("Удалить штраф");
             menu.addSabMenu(subMenu4);
 
             MethodSubMenu5 methodSubMenu5 = new MethodSubMenu5();
-            Menu subMenu5 = new Menu("Полная распечатка базы данных", methodSubMenu5);
+            Menu subMenu5 = new Menu("Полная распечатка базы данных");
             menu.addSabMenu(subMenu5);
 
             MethodSubMenu6 methodSubMenu6 = new MethodSubMenu6();
-            Menu subMenu6 = new Menu("Распечатать базу данных по ИНН", methodSubMenu6);
+            Menu subMenu6 = new Menu("Распечатать базу данных по ИНН");
             menu.addSabMenu(subMenu6);
 
             MethodSubMenu7 methodSubMenu7 = new MethodSubMenu7();
-            Menu subMenu7 = new Menu("Распечатать базу данных по типу штрафа", methodSubMenu7);
+            Menu subMenu7 = new Menu("Распечатать базу данных по типу штрафа");
             menu.addSabMenu(subMenu7);
 
             MethodSubMenu8 methodSubMenu8 = new MethodSubMenu8();
-            Menu subMenu8 = new Menu("Распечатать базу данных по городу", methodSubMenu8);
+            Menu subMenu8 = new Menu("Распечатать базу данных по городу");
             menu.addSabMenu(subMenu8);
 
             menu.print();
@@ -93,7 +91,7 @@ public class TaxOffice {
             TaxOffice.status = scanner.nextLine();
             switch (status){
                 case "1" :
-                    subMenu1.make();
+                    subMenu1.make(methodSubMenu1);
                     break;
                 case "2":
                     do {
@@ -102,40 +100,40 @@ public class TaxOffice {
                         status = scanner.nextLine();
                         switch (status) {
                             case "1":
-                                menu2Submenu1.make();
+                                menu2Submenu1.make(methodMenu2Submenu1);
                                 break;
                             case "2":
-                                menu2Submenu2.make();
+                                menu2Submenu2.make(methodMenu2Submenu2);
                                 break;
                             case "3":
-                                menu2Submenu3.make();
+                                menu2Submenu3.make(methodMenu2Submenu3);
                                 break;
                             case "4":
-                                menu2Submenu4.make();
+                                menu2Submenu4.make(methodMenu2Submenu4);
                                 break;
                             case "5":
-                                menu2Submenu5.make();
+                                menu2Submenu5.make(methodMenu2Submenu5);
                         }
                     } while ((!"exit".equals(status)));
                     status = null;
                     break;
                 case "3":
-                    subMenu3.make();
+                    subMenu3.make(methodSubMenu3);
                     break;
                 case "4":
-                    subMenu4.make();
+                    subMenu4.make(methodSubMenu4);
                     break;
                 case "5":
-                    subMenu5.make();
+                    subMenu5.make(methodSubMenu5);
                     break;
                 case "6":
-                    subMenu6.make();
+                    subMenu6.make(methodSubMenu6);
                     break;
                 case "7":
-                    subMenu7.make();
+                    subMenu7.make(methodSubMenu7);
                     break;
                 case"8":
-                    subMenu8.make();
+                    subMenu8.make(methodSubMenu8);
                     break;
             }
 

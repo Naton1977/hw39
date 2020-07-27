@@ -5,7 +5,7 @@ public interface MenuInterface {
 
     void getChild(int index);
 
-    void make();
+    void make(MakeInterface makeInterface);
 
     void remove(Menu menu);
 }
