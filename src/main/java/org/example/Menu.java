@@ -6,12 +6,17 @@ import java.util.List;
 public class Menu implements MenuInterface {
     private String name;
     private List<Menu> menuList = new ArrayList<>();
+    private Action<Context> action;
     private int count = 1;
 
     public Menu(String name) {
-        this.name = name;
+        this(name, null);
     }
 
+    public Menu(String name, Action<Context> action) {
+        this.name = name;
+        this.action = action;
+    }
 
     @Override
     public void addSabMenu(Menu menu) {
@@ -35,9 +40,15 @@ public class Menu implements MenuInterface {
     }
 
 
+
     @Override
     public void make(MakeInterface makeInterface) {
         makeInterface.doIt();
+    }
+
+    @Override
+    public void doIt(Context context) {
+        action.doIt(context);
     }
 
     @Override

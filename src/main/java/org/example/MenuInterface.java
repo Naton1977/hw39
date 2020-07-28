@@ -7,5 +7,7 @@ public interface MenuInterface {
 
     void make(MakeInterface makeInterface);
 
+    void doIt(Context context);
+
     void remove(Menu menu);
 }
