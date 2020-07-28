@@ -31,6 +31,11 @@ public class TaxOffice {
 
             Menu menu = new Menu("База данных налоговой инспекции");
 
+            Menu subMenu = new Menu("Test", context -> {
+                System.out.println("Make action whith context " + context);
+            });
+
+            menu.addSabMenu(subMenu);
 
             Method methodSubMenu1 = new Method();
             Menu subMenu1 = new Menu("Добавить нового налогоплательщика в базу");
